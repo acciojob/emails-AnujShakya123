@@ -48,7 +48,7 @@ public class Gmail extends Email {
          List<Triple<Date,String,String>> Inbox2=new ArrayList<>(List.copyOf(Inbox));
          for(Triple<Date, String, String>mail: Inbox){
              if(message.equals(mail.getRight())){
-             mailToDelete=mail;
+                mailToDelete=mail;
              }
          }
 
@@ -66,7 +66,6 @@ public class Gmail extends Email {
             return null;
         return Inbox.get(Inbox.size()-1).getRight();
    }
-
     public String findOldestMessage(){
         // If the inbox is empty, return null
         // Else, return the message of the oldest mail present in the inbox
@@ -110,7 +109,6 @@ public class Gmail extends Email {
     }
 
     public int getInboxCapacity() {
-        // Return the maximum number of mails that can be stored in the inbox
         return inboxCapacity;
     }
 }
