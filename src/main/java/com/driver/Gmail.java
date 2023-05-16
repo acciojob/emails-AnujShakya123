@@ -43,7 +43,7 @@ public class Gmail extends Email {
     public void deleteMail(String message){
         // Each message is distinct
         // If the given message is found in any mail in the inbox, move the mail to trash, else do nothing
-//         int index=-1;
+
          Triple<Date,String,String> mailToDelete=null;
          List<Triple<Date,String,String>> Inbox2=new ArrayList<>(List.copyOf(Inbox));
          for(Triple<Date, String, String>mail: Inbox){
@@ -62,7 +62,7 @@ public class Gmail extends Email {
     public String findLatestMessage(){
         // If the inbox is empty, return null
         // Else, return the message of the latest mail present in the inbox
-        if(inbox.isEmpty())
+        if(Inbox.isEmpty())
             return null;
         return Inbox.get(Inbox.size()-1).getRight();
    }
