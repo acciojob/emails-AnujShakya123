@@ -41,7 +41,7 @@ public class Email {
                 System.out.println("The new password is not valid");
             }
         } else {
-            System.out.println("The given passworddoes not match current password");
+            System.out.println("The given password does not match current password");
         }
     }
          private Boolean isValid(String password){
