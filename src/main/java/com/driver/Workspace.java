@@ -29,12 +29,12 @@ public class Workspace extends Gmail{
         List<Meeting> sortedCalender=new ArrayList<>(List.copyOf(calendar));
         Collections.sort(sortedCalender,(x,y) -> x.getEndTime().compareTo(y.getEndTime()) );
         List<Meeting>maxMeetings=new ArrayList<>();
-      LocalTime time_limit=sortedCalender.get(0).getStartTime();
+      LocalTime time_limit=sortedCalender.get(0).getEndTime();
       maxMeetings.add(sortedCalender.get(0));
         for(Meeting meeting : sortedCalender){
             if(meeting.getStartTime().compareTo(time_limit)>0){
                 maxMeetings.add(meeting);
-                time_limit=meeting.getStartTime();
+                time_limit=meeting.getEndTime();
             }
         }
         return maxMeetings.size();
