@@ -37,9 +37,10 @@ public class Gmail extends Email {
               Trash.add(oldestMail);
               Inbox.remove(0);
         }
-          Triple<Date,String, String> mail= Triple.of(date, sender, message);
+//          Triple<Date,String, String> mail= Triple.of(date, sender, message);
           Mail newMail=new Mail(date, sender, message);
           inbox.add(newMail);
+        Triple<Date,String, String> mail= Triple.of(date, sender, message);
           Inbox.add(mail);
     }
 
