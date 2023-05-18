@@ -30,9 +30,12 @@ public class Gmail extends Email {
         // 1. Each mail in the inbox is distinct.
         // 2. The mails are received in non-decreasing order. This means that the date of a new mail is greater than equal to the dates of mails received already.
           if(Inbox.size()==inboxCapacity){
-             Triple<Date, String, String> oldestMail=Inbox.get(0);
-             Inbox.remove(0);
-             Inbox.add(oldestMail);
+//             Triple<Date, String, String> oldestMail=Inbox.get(0);
+//             Inbox.remove(0);
+//             Inbox.add(oldestMail);
+              Triple<Date, String, String> oldestMail = Inbox.get(0);
+              Trash.add(oldestMail);
+              Inbox.remove(0);
         }
           Triple<Date,String, String> mail= Triple.of(date, sender, message);
           Mail newMail=new Mail(date, sender, message);
