@@ -84,12 +84,12 @@ public class Gmail extends Email {
                 cnt++;
             }
         }
-//        for(Triple<Date, String, String>mail:Inbox){
-//            Date myDate=mail.getLeft();
-//            if(myDate.compareTo(start) >= 0 && myDate.compareTo(end) <= 0){
-//                cnt++;
-//            }
-//        }
+        for(Triple<Date, String, String>mail:Inbox){
+            Date myDate=mail.getLeft();
+            if(myDate.compareTo(start) >= 0 && myDate.compareTo(end) <= 0){
+                cnt++;
+            }
+        }
         return cnt;
     }
 
@@ -105,8 +105,11 @@ public class Gmail extends Email {
 
     public void emptyTrash(){
         // clear all mails in the trash
-      Trash=new ArrayList<>();
+//      Trash=new ArrayList<>();
+
+    Trash.clear();
     }
+
 
     public int getInboxCapacity() {
         return inboxCapacity;
